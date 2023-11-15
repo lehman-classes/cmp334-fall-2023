@@ -1,3 +1,4 @@
+
 # Write a program that ask the user to input their favorite city
 # Print out the favorite city vertically
 # Print out the favorite city reverse 
@@ -65,8 +66,8 @@ print_out_reverse:
 		move $a0, $t3
 		syscall
 		
-		addu $t0, $t0, 1
-		subu $t1, $t1, 1
+		addu $t0, $t0, 1 # increase counter
+		subu $t1, $t1, 1 # decrease address 
 		
 		j loop
 	done:
@@ -77,7 +78,7 @@ print_out_reverse:
 #	$a1 - input length
 print_out_input_vertically:
 	li $t0, 0 # counter
-	addu $t1, $a0, $zero # beginning address
+	addu $t1, $a0, $zero # beginning address. saving the address in register $t1
 	loop_0:
 		lb $t2, ($t1) # get one char (byte) from address
 		beq $t0, $a1, done_0 # check if we are at the end of input
