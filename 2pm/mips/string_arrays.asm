@@ -10,7 +10,7 @@ names:		.asciiz	"Alec", "John", "Lana", "Luis", "Iris"
 array_size:	.word 5
 	
 	.text
-	
+
 	# param
 	la $a0, names
 	lw $a1, array_size
